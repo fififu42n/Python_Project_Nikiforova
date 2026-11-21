@@ -12,14 +12,13 @@ def NCreate(n):
     return Nlist
 
 def Rer(K, L, Nlist):
-    remove_list = [K, L]
-    for i in remove_list:
-        Nlist.pop(i)
+    del Nlist[K - 1 : L]
     return Nlist
 
-n = int(input("Введите число N (оно должно быть больше 2): "))
-K = int(input("Введите число K (1 < K <= L): "))
-L= int(input("Введите число L (K < L <= N): "))
+
+n = int(input("Задайте колисчество элементов списка: "))
+K = int(input("С какого элемента списка удалить значения: "))
+L = int(input("До какого элемента списка удалить значения: "))
 
 Nlist = NCreate(n)
 print(f"Список с кол-во элементов N: {Nlist}")
