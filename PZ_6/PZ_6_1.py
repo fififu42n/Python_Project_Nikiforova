@@ -11,15 +11,24 @@ def NCreate(n):
         i += 1
     return Nlist
 
-def Rer(K, L, Nlist):
-    del Nlist[K - 1 : L]
-    return Nlist
+
+def Arifmet(NList, K, L):
+    con = 0
+    sum = 0
+    for i in Nlist[:K]:
+        sum += i
+        con += 1
+    for i in Nlist[:L]:
+        sum += i
+        con += 1
+    final_sum = sum/con
+    return final_sum
 
 
 n = int(input("Задайте колисчество элементов списка: "))
 K = int(input("С какого элемента списка удалить значения: "))
-L = int(input("До какого элемента спискааа удалить значения: "))
+L = int(input("До какого элемента списка удалить значения: "))
 
 Nlist = NCreate(n)
 print(f"Список с кол-во элементов N: {Nlist}")
-print(f"Список с удаленными элементами под номерами {K} и {L}: {Rer(K, L, Nlist)}")
+print(f"Список с удаленными элементами под номерами {K} и {L}: {Arifmet(Nlist, K, L)}")
